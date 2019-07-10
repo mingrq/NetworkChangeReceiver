@@ -82,4 +82,22 @@ public class CheckNetworkState {
         }
         return false;
     }
+
+    /**
+     *检测当前网络是否能连接到服务器
+     * @param location 服务器地址 域名 或 IP
+     * @return true是可以上网，false是不能上网
+     */
+    public boolean isServerOnline(String location) {
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            Process ipProcess = runtime.exec("ping -c 1 "+location);
+            int exitValue = ipProcess.waitFor();
+            Log.i("Avalible", "Process:"+exitValue);
+            return (exitValue == 0);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
