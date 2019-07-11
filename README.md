@@ -1,9 +1,11 @@
 # 网络连接监测
 
 最新版本1.0.0
+
 #
 ### 使用
 #
+
 ```
 在 build.gradle 中添加
 allprojects {
@@ -53,7 +55,8 @@ public class MyApplication extends Application {
     }
 }
 ```
-#### 使用
+
+### 使用
 #
   程序已使用EventBus 3.1.1发送事件
   
